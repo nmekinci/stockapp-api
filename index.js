@@ -39,7 +39,7 @@ app.all('/',(req,res) => {
         user:req?.user
     })
 })
-// app.use(require('./src/routes'))
+app.use(require('./src/routes/indexRoute'))
 
 //******Error Handler
 app.use(require('./src/middlewares/errorHandler'))
