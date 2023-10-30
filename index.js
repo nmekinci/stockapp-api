@@ -24,7 +24,7 @@ app.use(express.json())
 app.use(require('./src/middlewares/authentication'))
 
 //Logger
-
+app.use(require('./src/middlewares/logger'))
 //getModelList
 
 //******Routes

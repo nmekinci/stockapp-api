@@ -19,6 +19,7 @@
   "homepage": "https://github.com/nmekinci/stockapp-api#readme",
   "dependencies": {
     "dotenv": "^16.3.1",
-    "express-async-errors": "^3.1.1"
+    "express-async-errors": "^3.1.1",
+    "morgan": "^1.10.0"
   }
 }
