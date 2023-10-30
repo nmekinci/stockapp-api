@@ -21,7 +21,7 @@ const SaleSchema = new Schema(
     },
     product_id: {
       type: Schema.Types.ObjectId,
-      ref: "Account", //!
+      ref: "Product",
       required: true,
     },
     quantity: {

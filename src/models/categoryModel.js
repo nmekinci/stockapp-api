@@ -12,6 +12,6 @@ const CategorySchema = new Schema({
     }
 
     
-},{ collection: 'Categories', timestamps: true })
+},{ collection: 'categories', timestamps: true })
 
 module.exports = model('Category', CategorySchema)
