@@ -2,15 +2,15 @@
 /* -------------------------------------------------------
     NODEJS EXPRESS | 
 ------------------------------------------------------- */
-// Category Controller:
+// Firm Controller:
 
-const Category = require('../models/categoryModel')
+const Firm = require('../models/firmModel')
 
 module.exports = {
     list: async (req,res) => {
         /*
-            #swagger.tags = ["Categories"]
-            #swagger.summary = "List Categories"
+            #swagger.tags = ["Firms"]
+            #swagger.summary = "List Firms"
             #swagger.description = `
                 You can send query with endpoint for search[], sort[], page and limit.
                 <ul> Examples:
@@ -20,28 +20,31 @@ module.exports = {
                 </ul>
             `
         */
-       const data = await res.getModelList(Category)
+       const data = await res.getModelList(Firm)
 
        res.status(200).send({
         error: false,
-        details: await res.getModelListDetails(Category),
+        details: await res.getModelListDetails(Firm),
         data
        })
     },
     //CRUD 
     create: async (req,res) => {
         /*
-            #swagger.tags = ["Categories"]
-            #swagger.summary = "Create an Category"
+            #swagger.tags = ["Firms"]
+            #swagger.summary = "Create an Firm"
             #swagger.parameters['body'] = {
                 in: 'body',
                 required: true,
                 schema: {
-                    "name": "test"
+                    "name": "test",
+                    "phone": "test",
+                    "adress": "test",
+                    "image": "http://....",
                 }
             }
         */
-            const data = await Category.create(req.body)
+            const data = await Firm.create(req.body)
 
             res.status(201).send({
                 error: false,
@@ -50,11 +53,11 @@ module.exports = {
     },
     read: async (req, res) => {
         /*
-            #swagger.tags = ["Categories"]
-            #swagger.summary = "Get Single Category"
+            #swagger.tags = ["Firms"]
+            #swagger.summary = "Get Single Firm"
         */
 
-        const data = await Category.findOne({ _id: req.params.id })
+        const data = await Firm.findOne({ _id: req.params.id })
 
         res.status(200).send({
             error: false,
@@ -63,32 +66,35 @@ module.exports = {
     },
     update: async (req, res) => {
         /*
-            #swagger.tags = ["Categories"]
-            #swagger.summary = "Update Category"
+            #swagger.tags = ["Firms"]
+            #swagger.summary = "Update Firm"
             #swagger.parameters['body'] = {
                 in: 'body',
                 required: true,
                 schema: {
-                    "name": "test"
+                    "name": "test",
+                    "phone": "test",
+                    "adress": "test",
+                    "image": "http://....",
                 }
             }
         */
 
-        const data = await Category.updateOne({ _id: req.params.id }, req.body, { runValidators: true })
+        const data = await Firm.updateOne({ _id: req.params.id }, req.body, { runValidators: true })
 
         res.status(200).send({
             error: false,
             data,
-            new: await Category.findOne({ _id: req.params.id })
+            new: await Firm.findOne({ _id: req.params.id })
         })
     },
     delete: async (req, res) => {
         /*
-            #swagger.tags = ["Categories"]
-            #swagger.summary = "Delete Category"
+            #swagger.tags = ["Firms"]
+            #swagger.summary = "Delete Firm"
         */
 
-        const data = await Category.deleteOne({ _id: req.params.id })
+        const data = await Firm.deleteOne({ _id: req.params.id })
 
         res.status(data.deletedCount ? 204 : 404).send({
             error: !data.deletedCount,
