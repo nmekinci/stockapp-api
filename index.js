@@ -21,7 +21,7 @@ dbConnection()
 app.use(express.json())
 
 //Authentication
-
+app.use(require('./src/middlewares/authentication'))
 
 //Logger
 

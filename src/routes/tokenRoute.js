@@ -7,7 +7,7 @@ const router = require('express').Router()
 // routes/token:
 
 
-const token = require('../controllers/tokenModel')
+const token = require('../controllers/tokenController')
 
 // URL: /tokens
 

@@ -28,4 +28,4 @@ const ProductSchema = new Schema(
   { collection: "products", timestamps: true }
 );
 
-module.exports = model("Product", SaleSchema);
+module.exports = model("Product", ProductSchema);

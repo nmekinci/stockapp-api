@@ -2,7 +2,7 @@
 
 const { Schema, model } = require("mongoose");
 
-const SaleSchema = new Schema(
+const PurchaseSchema = new Schema(
   {
     user_id: {
       type: Schema.Types.ObjectId,
@@ -36,7 +36,7 @@ const SaleSchema = new Schema(
       type: Number,
     },
   },
-  { collection: "Sales", timestamps: true }
+  { collection: "purchases", timestamps: true }
 );
 
-module.exports = model("Sale", SaleSchema);
+module.exports = model("Purchase", PurchaseSchema);
