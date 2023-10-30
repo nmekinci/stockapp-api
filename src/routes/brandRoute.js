@@ -4,21 +4,21 @@
 ------------------------------------------------------- */
 const router = require('express').Router()
 /* ------------------------------------------------------- */
-// routes/account:
+// routes/brand:
 
-const account = require('../controllers/accountController')
+const brand = require('../controllers/brandController')
 
-// URL: /accounts
+// URL: /brands
 
 router.route('/')
-    .get(account.list)
-    .post(account.create)
+    .get(brand.list)
+    .post(brand.create)
 
 router.route('/:id')
-    .get(account.read)
-    .put(account.update)
-    .patch(account.update)
-    .delete(account.delete)
+    .get(brand.read)
+    .put(brand.update)
+    .patch(brand.update)
+    .delete(brand.delete)
 
 /* ------------------------------------------------------- */
 module.exports = router
