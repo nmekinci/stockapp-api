@@ -26,6 +26,8 @@ app.use(require('./src/middlewares/authentication'))
 //Logger
 app.use(require('./src/middlewares/logger'))
 //getModelList
+app.use(require('./src/middlewares/findSearchSortPage'))
+
 
 //******Routes
 app.all('/',(req,res) => {
